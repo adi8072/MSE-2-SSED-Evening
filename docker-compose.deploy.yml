@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
 
   backend:
-    image: ${DOCKERHUB_USERNAME}/backend:latest
+    image: ${DOCKERHUB_USERNAME:-rishu2304}/backend:latest
     environment:
       NODE_ENV: production
       PORT: 3000
@@ -61,7 +61,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: ${DOCKERHUB_USERNAME}/frontend:latest
+    image: ${DOCKERHUB_USERNAME:-rishu2304}/frontend:latest
     ports:
       - "8080:80"
     depends_on:
